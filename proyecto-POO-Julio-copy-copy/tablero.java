@@ -13,15 +13,19 @@ public class tablero extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int c=3;
-    public tablero (){
+    public tablero(){
         
     }
-    
-    public void Disminuir()
-    {
+    public void Disminuir(){
         c--;
-        if(c==0){
+        if(c==0)
+        {
             Greenfoot.stop();
-        }// Add your action code here.
+        }
+    }
+    
+    public void act()
+    {
+        // Add your action code here.
     }
 }

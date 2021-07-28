@@ -14,17 +14,26 @@ public class MiMundo extends World
      * Constructor for objects of class MiMundo.
      * 
      */
-    public tablero objtablero; //Declaracion variable tablero para uso general
+    public tablero objTablero;//Declaracion variable tablero para uso general
+    Scoreboard puntos;//Variable de tablero puntos
+    Scoreboard vidas;//Variable de tablero vidas 
     public MiMundo()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(800, 600, 1); 
+        super(800, 600, 1); //Proporciones mundo
+        setPaintOrder(Gameover.class,Scoreboard.class,pezM.class,delfin.class);
+        
         //backgroundMusic.playLoop();//Loop de musica 
         prepare();
-        crearpezB(15);//Clase para generar peces buenos
-        crearpezM(5);//Clase para generar peces malos
-        objtablero=new tablero();
+        crearpezB(25);//Clase para generar peces buenos
+        crearpezM(10);//Clase para generar peces malos
+        objTablero=new tablero();
+        puntos=new Scoreboard(0,"Puntaje:");
+        vidas=new Scoreboard(3,"Vidas:");
+        addObject(puntos,150,85); //Colocacion de objeto
+        addObject(vidas,300,85);//Colocacion de objeto
     }
+    
     public void crearpezB (int numero){//Detalles de clase
         for (int i=0; i<numero; i++){ //Ciclo for
            pezB b=new pezB();

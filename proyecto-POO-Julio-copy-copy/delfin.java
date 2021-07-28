@@ -45,6 +45,8 @@ public class delfin extends Actor
           World world;
           world= getWorld();
           world.removeObject(pezB);
+          MiMundo mund=(MiMundo)getWorld();
+          mund.puntos.incrementar();
       }
     }
 }

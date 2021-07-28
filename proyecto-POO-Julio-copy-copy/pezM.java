@@ -29,12 +29,18 @@ public class pezM extends Actor
                 turn(Greenfoot.getRandomNumber(80-45));
             }
         } 
+        //Daño a delfin y disminucion de vidas 
         Actor delfin=getOneObjectAtOffset(0, 0, delfin.class);
         if (delfin!=null){
             MiMundo mund=(MiMundo)getWorld();
             getWorld().removeObject(delfin);
-            mund.objtablero.Disminuir();
+            mund.vidas.Disminuir();
             getWorld().addObject(new delfin(), 50, 300);
+            if (mund.vidas.obtenerValor()==0){
+                Gameover t=new Gameover();
+                getWorld().addObject(t,((getWorld().getWidth()/2)+30),((getWorld().getHeight()/2)+150));
+                
+            }
         }// Add your action code here.
     }
 }
