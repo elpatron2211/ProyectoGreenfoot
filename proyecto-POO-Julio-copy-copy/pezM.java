@@ -14,7 +14,8 @@ public class pezM extends Actor
      */
     public void act()
     {
-       move(2);
+       //Movimiento automatico de pez malo
+        move(2);
         World l=getWorld();
         if(getX()>l.getWidth()-5||getX()<=5){
          turn (180);
@@ -27,6 +28,13 @@ public class pezM extends Actor
             if(Greenfoot.getRandomNumber(1000)<90){
                 turn(Greenfoot.getRandomNumber(80-45));
             }
-        } // Add your action code here.
+        } 
+        Actor delfin=getOneObjectAtOffset(0, 0, delfin.class);
+        if (delfin!=null){
+            MiMundo mund=(MiMundo)getWorld();
+            getWorld().removeObject(delfin);
+            mund.objtablero.Disminuir();
+            getWorld().addObject(new delfin(), 50, 300);
+        }// Add your action code here.
     }
 }

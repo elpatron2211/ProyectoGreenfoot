@@ -14,6 +14,7 @@ public class pezB extends Actor
      */
     public void act()
     {
+        //Movimiento automatico de pez bueno
         move(2);
         World j=getWorld();
         if(getX()>j.getWidth()-5||getX()<=5){

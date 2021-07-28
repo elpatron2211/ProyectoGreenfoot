@@ -14,26 +14,30 @@ public class MiMundo extends World
      * Constructor for objects of class MiMundo.
      * 
      */
+    public tablero objtablero; //Declaracion variable tablero para uso general
     public MiMundo()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
-        backgroundMusic.playLoop();
+        super(800, 600, 1); 
+        //backgroundMusic.playLoop();//Loop de musica 
         prepare();
-        crearpezB(15);
-        crearpezM(5);
+        crearpezB(15);//Clase para generar peces buenos
+        crearpezM(5);//Clase para generar peces malos
+        objtablero=new tablero();
     }
-    public void crearpezB (int numero){
-        for (int i=0; i<numero; i++){
+    public void crearpezB (int numero){//Detalles de clase
+        for (int i=0; i<numero; i++){ //Ciclo for
            pezB b=new pezB();
+           //Indicaciones de coordenadas
            int x=Greenfoot.getRandomNumber(getWidth());
            int y=Greenfoot.getRandomNumber(getHeight());
            addObject(b,x,y);
         }
     }
-    public void crearpezM (int numero){
-        for(int i=0; i<numero; i++){
+    public void crearpezM (int numero){ //Detalles de clase
+        for(int i=0; i<numero; i++){ //Ciclor
             pezM m=new pezM();
+            //Indicacion de coordenadas 
             int x=Greenfoot.getRandomNumber (getWidth());
             int y=Greenfoot.getRandomNumber(getHeight());
             addObject(m,x,y);

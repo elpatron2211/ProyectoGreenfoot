@@ -14,25 +14,37 @@ public class delfin extends Actor
      */
     public void act()
     {
-        mueveYvuelta();// Add your action code here.
+        mueveYvuelta();
+        eat();// Clase de movimientos de delfin.
     }
     public void mueveYvuelta()
     {
-    if (Greenfoot.isKeyDown("left"))
+    if (Greenfoot.isKeyDown("left")) //Movimiento hacia la izquierda
     {
         turn(-3);
     }
-    if(Greenfoot.isKeyDown("right"))
+    if(Greenfoot.isKeyDown("right")) //Movimiento hacia la derecha
     {
         turn(3);
     }
-    if(Greenfoot.isKeyDown("up"))
+    if(Greenfoot.isKeyDown("up"))//Movimiento hacia delante
     {
         move(2);
     }
-    if (Greenfoot.isKeyDown("down"))
+    if (Greenfoot.isKeyDown("down"))//Movimiento hacia atrás
     {
         move(-2);
     }
+    }
+    public void eat ()
+    {
+      Actor pezB;
+      pezB = getOneObjectAtOffset(0, 0, pezB.class);
+      if (pezB != null)
+      {
+          World world;
+          world= getWorld();
+          world.removeObject(pezB);
+      }
     }
 }
