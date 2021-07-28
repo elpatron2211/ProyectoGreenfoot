@@ -23,7 +23,7 @@ public class MiMundo extends World
         super(800, 600, 1); //Proporciones mundo
         setPaintOrder(Gameover.class,Scoreboard.class,pezM.class,delfin.class);
         
-        //backgroundMusic.playLoop();//Loop de musica 
+        backgroundMusic.playLoop();//Loop de musica 
         prepare();
         crearpezB(25);//Clase para generar peces buenos
         crearpezM(10);//Clase para generar peces malos
